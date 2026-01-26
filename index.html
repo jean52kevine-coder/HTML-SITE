@@ -1,191 +1,691 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Agency — Création de Sites Web Premium</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-    header, section, footer {
-      padding: 80px 10%;
-    }
-    h1, h2, h3 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-    .hero {
-      background: linear-gradient(135deg, #1b0036, #000428);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 4em;
-      color: #b084f9;
-    }
-    .hero p {
-      max-width: 700px;
-      font-size: 1.2em;
-      color: #d3d3d3;
-      margin: 20px 0 40px;
-    }
-    .cta {
-      display: inline-block;
-      background: linear-gradient(90deg, #7a00ff, #00bcd4);
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .cta:hover {
-      transform: scale(1.05);
-    }
-    .about {
-      background-color: #111;
-    }
-    .about h2 {
-      color: #7a00ff;
-      margin-bottom: 20px;
-    }
-    .offers {
-      background-color: #0b0b0b;
-      display: grid;
-      gap: 40px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      text-align: center;
-    }
-    .offer-box {
-      border: 1px solid #333;
-      padding: 40px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .offer-box:hover {
-      border-color: #7a00ff;
-      transform: translateY(-5px);
-    }
-    .offer-box h3 {
-      color: #00bcd4;
-      margin-bottom: 10px;
-    }
-    .comparison {
-      background: linear-gradient(90deg, #000, #1b0036);
-      color: #fff;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 30px;
-    }
-    th, td {
-      border: 1px solid #333;
-      padding: 15px;
-      text-align: center;
-    }
-    th {
-      background-color: #111;
-      color: #b084f9;
-    }
-    tr:nth-child(even) {
-      background-color: #0f0f0f;
-    }
-    .action {
-      text-align: center;
-      background-color: #000;
-    }
-    .action h2 {
-      color: #b084f9;
-      margin-bottom: 20px;
-    }
-    footer {
-      background-color: #080808;
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-    }
-    footer a {
-      color: #7a00ff;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Digital - Agence Web Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --violet: #8b5cf6;
+            --blue: #3b82f6;
+            --gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--violet);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent);
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent);
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: #888;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.5);
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .about-text p {
+            color: #aaa;
+            margin-bottom: 15px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: var(--gray);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--violet);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .services {
+            background: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--black);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--violet), var(--blue));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--violet);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .service-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .service-price {
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            color: #aaa;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .service-features li:before {
+            content: '✓';
+            color: var(--violet);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .comparison {
+            background: var(--black);
+        }
+
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--gray);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            padding: 30px;
+            font-weight: 800;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            align-items: center;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row div:first-child {
+            font-weight: 600;
+        }
+
+        .check {
+            color: var(--violet);
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .cross {
+            color: #ff4444;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--violet), var(--blue));
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+        }
+
+        .cta-section h2 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--white);
+            color: var(--violet);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background: var(--black);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #888;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--violet);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content,
+            .services-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 2fr 1fr 1fr;
+                font-size: 12px;
+                padding: 20px 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Nova Agency</h1>
-    <p>Agence web premium spécialisée dans la création de sites vitrines et e-commerce au design percutant et au positionnement agressif.</p>
-    <a href="#action" class="cta">Commencer Maintenant</a>
-  </section>
+    <header>
+        <nav class="container">
+            <div class="logo">APEX</div>
+            <ul class="nav-links">
+                <li><a href="#about">Agence</a></li>
+                <li><a href="#services">Offres</a></li>
+                <li><a href="#comparison">Différence</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="about">
-    <h2>Notre Vision</h2>
-    <p>Nous aidons les entreprises locales à passer au niveau supérieur avec une présence digitale à la hauteur de leur ambition. Excellence, performance et design ne sont pas une option — c’est notre standard.</p>
-  </section>
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Votre site web ne devrait pas <br><span class="gradient-text">ressembler à tous les autres</span></h1>
+            <p>Designs premium qui convertissent. Sites sur-mesure qui dominent.</p>
+            <a href="#contact" class="cta-button">Démarrer mon projet</a>
+        </div>
+    </section>
 
-  <section class="offers">
-    <div class="offer-box">
-      <h3>Site Vitrine</h3>
-      <p>Design sur mesure, rapidité exemplaire et impact maximal. Parfait pour valoriser votre image et convertir vos visiteurs en clients.</p>
-      <p><strong>À partir de 1200€</strong></p>
-    </div>
-    <div class="offer-box">
-      <h3>Site E-commerce</h3>
-      <p>Créez une boutique en ligne performante, élégante et optimisée pour la conversion. Gestion facile, expérience fluide.</p>
-      <p><strong>À partir de 2500€</strong></p>
-    </div>
-  </section>
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nous créons des expériences digitales <span class="gradient-text">inoubliables</span></h3>
+                    <p>Chez APEX, nous ne faisons pas de sites web ordinaires. Nous créons des machines à convertir, des vitrines qui marquent les esprits et des plateformes qui génèrent des résultats.</p>
+                    <p>Chaque pixel est pensé pour votre succès. Chaque ligne de code est optimisée pour la performance. Aucun template, aucun compromis.</p>
+                    <p><strong>Premium par design. Redoutable par nature.</strong></p>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Projets livrés</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="comparison">
-    <h2>Premium vs Amateur</h2>
-    <table>
-      <tr>
-        <th>Critère</th>
-        <th>Nova Agency</th>
-        <th>Freelance Amateur</th>
-      </tr>
-      <tr>
-        <td>Design</td>
-        <td>Sur mesure & impactant</td>
-        <td>Basique & générique</td>
-      </tr>
-      <tr>
-        <td>Performance</td>
-        <td>Code optimisé, SEO-ready</td>
-        <td>Temps de chargement lent</td>
-      </tr>
-      <tr>
-        <td>Accompagnement</td>
-        <td>Stratégie & suivi dédiés</td>
-        <td>Livraison sans suivi</td>
-      </tr>
-      <tr>
-        <td>Résultat</td>
-        <td>Image premium, conversions élevées</td>
-        <td>Image amateur, stagnation</td>
-      </tr>
-    </table>
-  </section>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nos <span class="gradient-text">Offres Premium</span></h2>
+            <p class="section-subtitle">Des solutions sur-mesure conçues pour dominer votre marché</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Site Vitrine Premium</h3>
+                    <p>Design unique et moderne qui capture l'attention et convertit vos visiteurs en clients. Optimisé SEO, ultra-rapide et 100% responsive.</p>
+                    <div class="service-price">À partir de 1 997€</div>
+                    <ul class="service-features">
+                        <li>Design 100% sur-mesure</li>
+                        <li>5-7 pages optimisées</li>
+                        <li>Performance maximale</li>
+                        <li>SEO avancé inclus</li>
+                        <li>Responsive tous écrans</li>
+                        <li>Formulaires de contact</li>
+                        <li>Support 30 jours</li>
+                    </ul>
+                </div>
 
-  <section class="action" id="action">
-    <h2>Prêt à dominer votre marché ?</h2>
-    <a href="mailto:contact@nova-agency.fr" class="cta">Contactez-nous</a>
-  </section>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>E-commerce Dominateur</h3>
+                    <p>Boutique en ligne complète qui transforme les visiteurs en acheteurs. Gestion produits, paiement sécurisé et analytics avancés.</p>
+                    <div class="service-price">À partir de 3 997€</div>
+                    <ul class="service-features">
+                        <li>Plateforme e-commerce complète</li>
+                        <li>Design luxe et moderne</li>
+                        <li>Gestion produits illimitée</li>
+                        <li>Paiement sécurisé intégré</li>
+                        <li>Tableau de bord avancé</li>
+                        <li>Optimisation conversion</li>
+                        <li>Support prioritaire 90 jours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2024 Nova Agency. Tous droits réservés. | <a href="mailto:contact@nova-agency.fr">contact@nova-agency.fr</a></p>
-  </footer>
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2 class="section-title">Premium vs Amateur</h2>
+            <p class="section-subtitle">La différence entre exister en ligne et dominer votre marché</p>
+            
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div>Caractéristique</div>
+                    <div>Agence Premium</div>
+                    <div>Solutions Low-Cost</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Design unique et sur-mesure</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Code optimisé et propre</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Performance ultra-rapide</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>SEO professionnel inclus</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Support dédié et réactif</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Stratégie de conversion</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Maintenance et mises à jour</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Résultats mesurables</div>
+                    <div class="check">✓</div>
+                    <div class="cross">✗</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Prêt à dominer votre marché ?</h2>
+            <p>Discutons de votre projet et créons quelque chose d'extraordinaire ensemble.</p>
+            <a href="mailto:contact@apex-digital.com" class="cta-button-white">Demander un devis gratuit</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>APEX Digital</h4>
+                    <p>Agence web premium spécialisée dans la création de sites sur-mesure qui convertissent et dominent.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#services">Sites vitrines</a>
+                    <a href="#services">E-commerce</a>
+                    <a href="#services">SEO Premium</a>
+                    <a href="#services">Maintenance</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@apex-digital.com">contact@apex-digital.com</a>
+                    <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                    <p>Du lundi au vendredi<br>9h - 18h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 APEX Digital. Tous droits réservés. Conçu pour dominer.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
