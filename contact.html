@@ -1,11 +1,198 @@
-<section class="contact">
-  <h1>Parlons de votre projet</h1>
-  <p>Réponse sous 24h – sans engagement</p>
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Démarrez votre projet web | ALTERA</title>
+    <meta name="description" content="Contactez ALTERA pour votre projet web. Réponse sous 24h. Strasbourg, Reims, Grand Est.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
 
-  <form>
-    <input type="text" placeholder="Nom" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Votre message"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ALTERA</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                <li><a href="contact.html" class="active cta-nav">Nous contacter</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Démarrez votre projet</h1>
+            <p>Remplissez le formulaire ci-dessous. Nous vous répondons sous 24h.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Type de projet *</label>
+                            <select id="project" name="project" required>
+                                <option value="">Sélectionnez une option</option>
+                                <option value="vitrine">Site vitrine</option>
+                                <option value="ecommerce">Site e-commerce</option>
+                                <option value="maintenance">Maintenance & SEO</option>
+                                <option value="autre">Autre / Je ne sais pas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Parlez-nous de votre projet *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consent" required>
+                                <span>J'accepte d'être contacté par ALTERA concernant ma demande *</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Envoyer ma demande</button>
+                    </form>
+                    <div class="form-reassurance">
+                        <p>✓ Réponse sous 24h</p>
+                        <p>✓ Sans engagement</p>
+                        <p>✓ Vos données sont protégées</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>contact@altera-web.fr</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Téléphone</h4>
+                        <p>+33 3 XX XX XX XX</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Zone d'intervention</h4>
+                        <p>Strasbourg<br>Reims<br>Grand Est et alentours</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Horaires</h4>
+                        <p>Lundi - Vendredi<br>9h00 - 18h00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-contact">
+        <div class="container">
+            <h2>Ce qui se passe ensuite</h2>
+            <div class="process-contact">
+                <div class="process-contact-step">
+                    <div class="step-number-small">1</div>
+                    <h3>Réception de votre demande</h3>
+                    <p>Nous analysons votre demande et vos besoins spécifiques.</p>
+                </div>
+                <div class="process-contact-step">
+                    <div class="step-number-small">2</div>
+                    <h3>Premier échange</h3>
+                    <p>Nous vous contactons sous 24h pour un échange de 15-30 minutes.</p>
+                </div>
+                <div class="process-contact-step">
+                    <div class="step-number-small">3</div>
+                    <h3>Proposition personnalisée</h3>
+                    <p>Nous vous envoyons une proposition adaptée à votre projet et votre budget.</p>
+                </div>
+                <div class="process-contact-step">
+                    <div class="step-number-small">4</div>
+                    <h3>Démarrage</h3>
+                    <p>Une fois validé, nous lançons la production de votre site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2>Notre zone d'intervention</h2>
+            <div class="map-placeholder">
+                <p>Strasbourg • Reims • Grand Est</p>
+                <p class="map-note">Nous intervenons principalement dans le Grand Est, mais sommes ouverts à des projets dans toute la France.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ALTERA</h4>
+                    <p>Création de sites web premium pour entreprises locales dans le Grand Est.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Zone d'intervention</h4>
+                    <p>Strasbourg<br>Reims<br>Grand Est</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ALTERA. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/particles.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous répondrons sous 24h.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
