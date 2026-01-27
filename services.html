@@ -1,31 +1,202 @@
+<!-- services.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Nos services – APEX Digital</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos services de création web | ALTERA</title>
+    <meta name="description" content="Découvrez notre processus de création web en 5 étapes. Sites vitrine, e-commerce, maintenance et SEO local.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <canvas id="particles-canvas"></canvas>
 
-<header>
-  <nav>
-    <div class="logo">APEX Digital</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="services.html">Offres</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ALTERA</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="active">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                <li><a href="contact.html" class="cta-nav">Nous contacter</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-<section class="services">
-  <div class="container">
-    <h2>Nos offres premium</h2>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Notre approche</h1>
+            <p>Un processus structuré pour des résultats garantis</p>
+        </div>
+    </section>
 
-    <!-- TU COPIES ICI les .service-card de l’accueil -->
-  </div>
-</section>
+    <section class="process">
+        <div class="container">
+            <h2>5 étapes pour votre site web</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Analyse de vos besoins</h3>
+                    <p>Nous commençons par comprendre votre activité, vos objectifs et votre audience. Un échange de 30 minutes suffit pour définir le cadre.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Stratégie et structure</h3>
+                    <p>Nous établissons l'architecture de votre site : pages, parcours utilisateur, contenus prioritaires. Tout est validé avant la production.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Design et développement</h3>
+                    <p>Nos équipes conçoivent un design moderne et développent votre site. Vous recevez une première version sous 5 jours.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Ajustements et optimisation</h3>
+                    <p>Nous intégrons vos retours et optimisons les performances : vitesse, SEO, compatibilité mobile.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h3>Mise en ligne et formation</h3>
+                    <p>Votre site est déployé sur votre hébergement. Nous vous formons à la gestion des contenus et restons disponibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="advantages">
+        <div class="container">
+            <h2>Les avantages de travailler avec ALTERA</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <h3>Délais respectés</h3>
+                    <p>7 jours pour un site vitrine, 10 jours pour un e-commerce. Nous tenons nos engagements.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Tarifs fixes</h3>
+                    <p>Le prix annoncé est le prix final. Pas de frais cachés, pas de mauvaises surprises.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Propriété totale</h3>
+                    <p>Vous êtes propriétaire de votre site, de votre nom de domaine, de votre hébergement.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Accompagnement continu</h3>
+                    <p>Nous restons à vos côtés après la livraison. Support technique et conseils stratégiques.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Code propre</h3>
+                    <p>Nos sites sont développés avec des standards professionnels. Facilement maintenables et évolutifs.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>SEO intégré</h3>
+                    <p>Optimisation pour les moteurs de recherche dès la conception. Votre visibilité est notre priorité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <h2>Nos solutions</h2>
+            <div class="services-cards">
+                <div class="service-card">
+                    <h3>Site vitrine</h3>
+                    <p>Présentez votre activité, valorisez votre expertise et générez des contacts qualifiés.</p>
+                    <ul class="service-features">
+                        <li>Design moderne et responsive</li>
+                        <li>Optimisation SEO locale</li>
+                        <li>Formulaire de contact</li>
+                        <li>Intégration Google Maps</li>
+                        <li>Formation incluse</li>
+                    </ul>
+                    <a href="vitrine.html" class="btn btn-secondary">Découvrir l'offre</a>
+                </div>
+                <div class="service-card">
+                    <h3>Site e-commerce</h3>
+                    <p>Vendez vos produits en ligne avec une boutique sécurisée, performante et facile à gérer.</p>
+                    <ul class="service-features">
+                        <li>Paiement en ligne sécurisé</li>
+                        <li>Gestion des stocks</li>
+                        <li>Suivi des commandes</li>
+                        <li>Design optimisé conversion</li>
+                        <li>Support technique inclus</li>
+                    </ul>
+                    <a href="ecommerce.html" class="btn btn-secondary">Découvrir l'offre</a>
+                </div>
+                <div class="service-card">
+                    <h3>Maintenance & SEO</h3>
+                    <p>Gardez votre site à jour, sécurisé et bien positionné sur Google.</p>
+                    <ul class="service-features">
+                        <li>Mises à jour techniques</li>
+                        <li>Sauvegardes automatiques</li>
+                        <li>Optimisation SEO continue</li>
+                        <li>Monitoring des performances</li>
+                        <li>Support prioritaire</li>
+                    </ul>
+                    <a href="maintenance-seo.html" class="btn btn-secondary">Découvrir l'offre</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Discutons de votre projet</h2>
+            <p>Un échange de 30 minutes pour définir la solution adaptée à vos besoins.</p>
+            <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ALTERA</h4>
+                    <p>Création de sites web premium pour entreprises locales dans le Grand Est.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Zone d'intervention</h4>
+                    <p>Strasbourg<br>Reims<br>Grand Est</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ALTERA. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/particles.js"></script>
 </body>
 </html>
