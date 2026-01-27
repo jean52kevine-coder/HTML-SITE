@@ -1,1 +1,237 @@
+<!-- ecommerce.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site e-commerce 747€ - Boutique en ligne clé en main | ALTERA</title>
+    <meta name="description" content="Site e-commerce professionnel pour 747€. Paiement sécurisé, gestion des stocks, design optimisé conversion. Grand Est.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ALTERA</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html" class="active">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                <li><a href="contact.html" class="cta-nav">Nous contacter</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Site e-commerce</h1>
+            <p class="hero-price">747 €</p>
+            <p>Vendez en ligne avec une boutique professionnelle, sécurisée et performante</p>
+        </div>
+    </section>
+
+    <section class="offer-benefits">
+        <div class="container">
+            <h2>Pourquoi vendre en ligne</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Ventes 24/7</h3>
+                    <p>Votre boutique est ouverte en permanence. Vendez pendant que vous dormez, travaillez ou profitez de votre temps libre.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Élargissez votre audience</h3>
+                    <p>Ne limitez plus vos ventes à votre zone locale. Touchez des clients dans toute la France.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Automatisation</h3>
+                    <p>Gestion des commandes, paiements, confirmations automatiques. Concentrez-vous sur votre cœur de métier.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Données précieuses</h3>
+                    <p>Comprenez vos clients : produits les plus vendus, paniers moyens, comportements d'achat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Ce qui est inclus</h2>
+            <div class="features-list">
+                <div class="feature-column">
+                    <h3>Boutique & Catalogue</h3>
+                    <ul>
+                        <li>Jusqu'à 50 produits intégrés</li>
+                        <li>Catégories illimitées</li>
+                        <li>Fiches produits optimisées</li>
+                        <li>Variations (taille, couleur, etc.)</li>
+                        <li>Gestion des stocks automatique</li>
+                    </ul>
+                </div>
+                <div class="feature-column">
+                    <h3>Paiement & Sécurité</h3>
+                    <ul>
+                        <li>Paiement en ligne sécurisé</li>
+                        <li>Stripe et/ou PayPal intégrés</li>
+                        <li>Certificat SSL inclus</li>
+                        <li>Conformité RGPD</li>
+                        <li>Paiement CB sécurisé</li>
+                    </ul>
+                </div>
+                <div class="feature-column">
+                    <h3>Gestion des commandes</h3>
+                    <ul>
+                        <li>Tableau de bord complet</li>
+                        <li>Suivi des commandes en temps réel</li>
+                        <li>Notifications automatiques</li>
+                        <li>Gestion des statuts</li>
+                        <li>Export des données</li>
+                    </ul>
+                </div>
+                <div class="feature-column">
+                    <h3>Expérience client</h3>
+                    <ul>
+                        <li>Panier optimisé pour la conversion</li>
+                        <li>Processus de paiement simplifié</li>
+                        <li>Comptes clients</li>
+                        <li>Historique des commandes</li>
+                        <li>Emails transactionnels</li>
+                    </ul>
+                </div>
+                <div class="feature-column">
+                    <h3>Design & Performance</h3>
+                    <ul>
+                        <li>Design moderne et professionnel</li>
+                        <li>100% responsive</li>
+                        <li>Optimisation mobile commerce</li>
+                        <li>Vitesse de chargement optimale</li>
+                        <li>UX pensée pour la conversion</li>
+                    </ul>
+                </div>
+                <div class="feature-column">
+                    <h3>Livraison & Support</h3>
+                    <ul>
+                        <li>Mise en ligne en 10 jours</li>
+                        <li>Formation complète à la gestion</li>
+                        <li>Documentation détaillée</li>
+                        <li>Support 30 jours inclus</li>
+                        <li>Configuration modes de livraison</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conversion-focus">
+        <div class="container">
+            <h2>Conçu pour maximiser vos ventes</h2>
+            <div class="conversion-grid">
+                <div class="conversion-item">
+                    <h3>Tunnel de vente optimisé</h3>
+                    <p>Chaque étape du parcours d'achat est conçue pour réduire les frictions et augmenter le taux de conversion.</p>
+                </div>
+                <div class="conversion-item">
+                    <h3>Calls-to-action stratégiques</h3>
+                    <p>Boutons et messages positionnés aux endroits clés pour inciter à l'action sans être intrusif.</p>
+                </div>
+                <div class="conversion-item">
+                    <h3>Réassurance client</h3>
+                    <p>Badges de sécurité, garanties visibles, témoignages : tout pour inspirer confiance au moment de payer.</p>
+                </div>
+                <div class="conversion-item">
+                    <h3>Mobile-optimized</h3>
+                    <p>Plus de 60% des achats en ligne se font sur mobile. Votre boutique est parfaite sur tous les écrans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="scalability">
+        <div class="container">
+            <h2>Une solution qui grandit avec vous</h2>
+            <p class="section-intro">Notre plateforme e-commerce est conçue pour évoluer avec votre activité.</p>
+            <div class="scalability-grid">
+                <div class="scalability-item">
+                    <h3>Ajout de produits illimité</h3>
+                    <p>50 produits inclus à la livraison. Vous pouvez en ajouter autant que nécessaire par la suite.</p>
+                </div>
+                <div class="scalability-item">
+                    <h3>Extensions disponibles</h3>
+                    <p>Programme de fidélité, codes promo, ventes flash : ajoutez des fonctionnalités selon vos besoins.</p>
+                </div>
+                <div class="scalability-item">
+                    <h3>Multi-langues & devises</h3>
+                    <p>Possibilité d'ajouter d'autres langues et devises si vous souhaitez vendre à l'international.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ideal-for">
+        <div class="container">
+            <h2>Idéal pour</h2>
+            <div class="ideal-grid">
+                <div class="ideal-item">Boutiques de créateurs</div>
+                <div class="ideal-item">Commerce de produits artisanaux</div>
+                <div class="ideal-item">Vente de produits locaux</div>
+                <div class="ideal-item">Mode et accessoires</div>
+                <div class="ideal-item">Produits cosmétiques</div>
+                <div class="ideal-item">Librairies et disquaires</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-detail">
+        <div class="container">
+            <div class="pricing-card-large">
+                <h2>Site e-commerce</h2>
+                <div class="price-large">747 €</div>
+                <p class="price-subtitle">Paiement unique. Pas d'abonnement forcé.</p>
+                <a href="contact.html" class="btn btn-primary">Commander maintenant</a>
+                <div class="pricing-notes">
+                    <p>Hébergement non inclus (environ 10-20€/mois pour un e-commerce)</p>
+                    <p>Frais de transaction Stripe/PayPal : environ 1,4% + 0,25€ par vente</p>
+                    <p>Nom de domaine non inclus (environ 10-15€/an)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Quels moyens de paiement sont proposés ?</h3>
+                    <p>Stripe (CB, Apple Pay, Google Pay) et PayPal sont intégrés par défaut. D'autres passerelles peuvent être ajoutées.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Puis-je gérer les stocks facilement ?</h3>
+                    <p>Oui. Vous avez un tableau de bord intuitif pour ajuster les stocks, ajouter des produits, gérer les commandes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Comment fonctionnent les livraisons ?</h3>
+                    <p>Vous définissez vos zones et tarifs de livraison. Le système calcule automatiquement les frais à la commande.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Que se passe-t-il si je dépasse 50 produits ?</h3>
+                    <p>Vous pouvez en ajouter autant que vous voulez. L'intégration des 50 premiers est incluse, ensuite vous gérez en autonomie.</p>
+                </div
 
