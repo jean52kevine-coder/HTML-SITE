@@ -1,33 +1,334 @@
-<section class="pricing">
-  <h1>Des tarifs clairs, sans surprise</h1>
+<!-- tarifs.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs transparents - Site vitrine, e-commerce, maintenance | ALTERA</title>
+    <meta name="description" content="Tarifs clairs et transparents : site vitrine 497€, e-commerce 747€, maintenance dès 39€/mois. Sans surprise.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
 
-  <div class="pricing-table">
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ALTERA</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </li>
+                <li><a href="tarifs.html" class="active">Tarifs</a></li>
+                <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                <li><a href="contact.html" class="cta-nav">Nous contacter</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-    <div class="price-card">
-      <h3>Site vitrine</h3>
-      <p class="price">497 €</p>
-      <ul>
-        <li>✔ Design premium</li>
-        <li>✔ Responsive mobile</li>
-        <li>✔ SEO local de base</li>
-        <li>✔ Livraison rapide</li>
-      </ul>
-    </div>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Tarifs transparents</h1>
+            <p>Pas de surprise. Des prix fixes pour des prestations claires.</p>
+        </div>
+    </section>
 
-    <div class="price-card featured">
-      <h3>Site e-commerce</h3>
-      <p class="price">747 €</p>
-      <ul>
-        <li>✔ Boutique clé en main</li>
-        <li>✔ Paiement sécurisé</li>
-        <li>✔ Optimisation conversion</li>
-        <li>✔ Formation incluse</li>
-      </ul>
-    </div>
+    <section class="pricing-overview">
+        <div class="container">
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Site vitrine</h3>
+                    <div class="price-large">497 €</div>
+                    <p class="price-subtitle">Paiement unique</p>
+                    <ul class="pricing-features">
+                        <li>Design moderne et responsive</li>
+                        <li>Jusqu'à 5 pages</li>
+                        <li>Formulaire de contact</li>
+                        <li>SEO de base inclus</li>
+                        <li>Formation à la gestion</li>
+                        <li>Livraison en 7 jours</li>
+                        <li>Support 30 jours</li>
+                    </ul>
+                    <a href="vitrine.html" class="btn btn-secondary">En savoir plus</a>
+                </div>
+                <div class="pricing-card pricing-card-featured">
+                    <div class="featured-badge">Le plus populaire</div>
+                    <h3>Site e-commerce</h3>
+                    <div class="price-large">747 €</div>
+                    <p class="price-subtitle">Paiement unique</p>
+                    <ul class="pricing-features">
+                        <li>Tout du site vitrine</li>
+                        <li>Jusqu'à 50 produits intégrés</li>
+                        <li>Paiement en ligne sécurisé</li>
+                        <li>Gestion des stocks</li>
+                        <li>Suivi des commandes</li>
+                        <li>Livraison en 10 jours</li>
+                        <li>Formation complète</li>
+                    </ul>
+                    <a href="ecommerce.html" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </div>
+    <section class="pricing-table-section">
+        <div class="container">
+            <h2>Comparatif détaillé</h2>
+            <div class="pricing-table-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Fonctionnalité</th>
+                            <th>Site vitrine<br>497 €</th>
+                            <th>Site e-commerce<br>747 €</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nombre de pages</td>
+                            <td>5 pages</td>
+                            <td>Illimité</td>
+                        </tr>
+                        <tr>
+                            <td>Design responsive</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Formulaire de contact</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>SEO de base</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Intégration Google Maps</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>SSL/HTTPS</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Catalogue produits</td>
+                            <td>—</td>
+                            <td>50 produits</td>
+                        </tr>
+                        <tr>
+                            <td>Paiement en ligne</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Gestion des stocks</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Suivi des commandes</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Comptes clients</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Emails transactionnels</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Délai de livraison</td>
+                            <td>7 jours</td>
+                            <td>10 jours</td>
+                        </tr>
+                        <tr>
+                            <td>Formation incluse</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Support après livraison</td>
+                            <td>30 jours</td>
+                            <td>30 jours</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-  <p class="note">
-    Maintenance & SEO : à partir de <strong>39 €/mois</strong>
-  </p>
-</section>
+    <section class="maintenance-pricing">
+        <div class="container">
+            <h2>Maintenance & SEO (optionnelle)</h2>
+            <p class="section-intro">Gardez votre site performant et bien positionné avec nos forfaits maintenance.</p>
+            <div class="maintenance-cards">
+                <div class="maintenance-card">
+                    <h3>Essentiel</h3>
+                    <div class="maintenance-price">39 €<span>/mois</span></div>
+                    <ul>
+                        <li>Mises à jour mensuelles</li>
+                        <li>Sauvegardes hebdomadaires</li>
+                        <li>Monitoring sécurité</li>
+                        <li>Support email</li>
+                    </ul>
+                </div>
+                <div class="maintenance-card maintenance-card-featured">
+                    <div class="featured-badge-small">Recommandé</div>
+                    <h3>Performance</h3>
+                    <div class="maintenance-price">44 €<span>/mois</span></div>
+                    <ul>
+                        <li>Tout du forfait Essentiel</li>
+                        <li>Optimisation SEO mensuelle</li>
+                        <li>Sauvegardes quotidiennes</li>
+                        <li>1 modification/mois</li>
+                    </ul>
+                </div>
+                <div class="maintenance-card">
+                    <h3>Premium</h3>
+                    <div class="maintenance-price">49 €<span>/mois</span></div>
+                    <ul>
+                        <li>Tout du forfait Performance</li>
+                        <li>SEO avancé</li>
+                        <li>2 modifications/mois</li>
+                        <li>Support téléphonique</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="maintenance-cta">
+                <a href="maintenance-seo.html" class="btn btn-secondary">Voir le détail des forfaits</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="additional-services">
+        <div class="container">
+            <h2>Services complémentaires</h2>
+            <div class="additional-grid">
+                <div class="additional-item">
+                    <h3>Page supplémentaire</h3>
+                    <div class="additional-price">50 €</div>
+                    <p>Ajout d'une page au-delà des 5 pages incluses dans l'offre vitrine.</p>
+                </div>
+                <div class="additional-item">
+                    <h3>Produits supplémentaires</h3>
+                    <div class="additional-price">2 € / produit</div>
+                    <p>Intégration de produits supplémentaires au-delà des 50 inclus.</p>
+                </div>
+                <div class="additional-item">
+                    <h3>Rédaction de contenu</h3>
+                    <div class="additional-price">Sur devis</div>
+                    <p>Rédaction professionnelle de vos textes optimisés SEO.</p>
+                </div>
+                <div class="additional-item">
+                    <h3>Photos professionnelles</h3>
+                    <div class="additional-price">Sur devis</div>
+                    <p>Shooting photo de vos produits ou locaux par un photographe partenaire.</p>
+                </div>
+                <div class="additional-item">
+                    <h3>Formation avancée</h3>
+                    <div class="additional-price">100 € / session</div>
+                    <p>Session de formation supplémentaire d'1h30 sur un sujet spécifique.</p>
+                </div>
+                <div class="additional-item">
+                    <h3>Migration de site existant</h3>
+                    <div class="additional-price">Sur devis</div>
+                    <p>Transfert de votre site actuel vers notre solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-faq">
+        <div class="container">
+            <h2>Questions sur les tarifs</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Les prix incluent-ils l'hébergement ?</h3>
+                    <p>Non. L'hébergement est à votre charge (environ 5-20€/mois selon vos besoins). Cela vous garantit la propriété totale de votre site.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Y a-t-il des frais cachés ?</h3>
+                    <p>Non. Le prix annoncé est le prix final pour les prestations décrites. Tout ajout est clairement chiffré avant acceptation.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Puis-je payer en plusieurs fois ?</h3>
+                    <p>Oui. Nous acceptons un paiement en 2 fois sans frais : 50% au démarrage, 50% à la livraison.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Que se passe-t-il après les 30 jours de support ?</h3>
+                    <p>Vous pouvez continuer en autonomie ou souscrire à un forfait maintenance pour un support continu.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Les tarifs maintenance sont-ils avec engagement ?</h3>
+                    <p>Non. Vous pouvez résilier à tout moment avec un préavis de 30 jours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Prêt à démarrer ?</h2>
+            <p>Discutons de votre projet pour définir l'offre adaptée à vos besoins.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ALTERA</h4>
+                    <p>Création de sites web premium pour entreprises locales dans le Grand Est.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Zone d'intervention</h4>
+                    <p>Strasbourg<br>Reims<br>Grand Est</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ALTERA. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/particles.js"></script>
+</body>
+</html>
