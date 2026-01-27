@@ -1,814 +1,229 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX Digital - Agence web premium spécialisée dans la création de sites web sur-mesure qui convertissent. Design unique, performance maximale, résultats garantis.">
-    <meta name="keywords" content="agence web, création site web, design premium, site vitrine, e-commerce, développement web">
-    <title>APEX Digital - Agence Web Premium | Sites Sur-Mesure Qui Dominent</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-primary: #7c3aed;
-            --color-secondary: #3b82f6;
-            --color-dark: #0a0a0a;
-            --color-gray: #1a1a1a;
-            --color-light-gray: #2a2a2a;
-            --color-text: #e5e5e5;
-            --color-text-muted: #9ca3af;
-            --color-white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
-            --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: var(--color-dark);
-            color: var(--color-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--color-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 8rem 2rem 4rem;
-            background: var(--gradient-dark);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
-            top: -400px;
-            right: -400px;
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
-            bottom: -300px;
-            left: -300px;
-            animation: pulse 6s ease-in-out infinite reverse;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
-        }
-
-        .hero-content {
-            max-width: 900px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(124, 58, 237, 0.1);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            border-radius: 50px;
-            color: var(--color-primary);
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 .highlight {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--color-text-muted);
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            color: var(--color-text-muted);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-
-        .cta-primary {
-            display: inline-block;
-            padding: 1.25rem 3rem;
-            background: var(--gradient-primary);
-            color: var(--color-white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.125rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(124, 58, 237, 0.5);
-        }
-
-        /* Stats Section */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 5rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--color-text-muted);
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 2rem;
-            background: var(--color-gray);
-            position: relative;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(124, 58, 237, 0.1);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            border-radius: 50px;
-            color: var(--color-primary);
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .section-description {
-            font-size: 1.25rem;
-            color: var(--color-text-muted);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-        }
-
-        .value-statement {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-white);
-            margin-top: 2rem;
-            padding: 2rem;
-            background: rgba(124, 58, 237, 0.1);
-            border-left: 4px solid var(--color-primary);
-            border-radius: 8px;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 8rem 2rem;
-            background: var(--color-dark);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: var(--gradient-dark);
-            border: 1px solid rgba(124, 58, 237, 0.2);
-            border-radius: 20px;
-            padding: 3rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(124, 58, 237, 0.5);
-            box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--color-white);
-        }
-
-        .service-card p {
-            color: var(--color-text-muted);
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .service-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .service-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-            color: var(--color-text);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            color: var(--color-primary);
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-
-        /* Comparison Table */
-        .comparison {
-            padding: 8rem 2rem;
-            background: var(--color-gray);
-        }
-
-        .comparison-table {
-            max-width: 1000px;
-            margin: 4rem auto 0;
-            background: var(--color-dark);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(124, 58, 237, 0.2);
-        }
-
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-        }
-
-        .comparison-table th {
-            background: var(--gradient-primary);
-            color: var(--color-white);
-            font-weight: 700;
-            font-size: 1.125rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table tr:hover {
-            background: rgba(124, 58, 237, 0.05);
-        }
-
-        .comparison-table td:first-child {
-            font-weight: 600;
-            color: var(--color-white);
-        }
-
-        .comparison-table td:not(:first-child) {
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .check {
-            color: #10b981;
-        }
-
-        .cross {
-            color: #ef4444;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 8rem 2rem;
-            background: var(--color-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-content h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-
-        .cta-content p {
-            font-size: 1.25rem;
-            color: var(--color-text-muted);
-            margin-bottom: 3rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background: var(--gradient-primary);
-            color: var(--color-white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 50px rgba(124, 58, 237, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(124, 58, 237, 0.6);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-gray);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(124, 58, 237, 0.2);
-        }
-
-        footer p {
-            color: var(--color-text-muted);
-            font-size: 1rem;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section-description {
-                font-size: 1rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
-            }
-
-            .stats {
-                gap: 2rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .comparison-table {
-                overflow-x: auto;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 1rem;
-                font-size: 0.875rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <title>ALTERA - Création de sites web premium pour entreprises locales | Strasbourg, Reims, Grand Est</title>
+    <meta name="description" content="ALTERA crée des sites web performants pour artisans, PME et entrepreneurs. Solutions vitrine et e-commerce clé en main. Strasbourg, Reims, Grand Est.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">APEX Digital</div>
-            <ul class="nav-links">
-                <li><a href="#services">Offres</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#comparison">Avantages</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <canvas id="particles-canvas"></canvas>
+
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">ALTERA</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                <li><a href="contact.html" class="cta-nav">Nous contacter</a></li>
             </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">Agence Web Premium</span>
-            <h1>Votre site web ne devrait pas ressembler <span class="highlight">à tous les autres</span></h1>
-            <p class="hero-subtitle">Designs premium qui convertissent. Sites sur-mesure qui dominent.</p>
-            <p class="hero-description">
-                Nous créons des expériences digitales qui transforment vos visiteurs en clients fidèles. 
-                Chaque projet est une œuvre unique, conçue pour maximiser vos résultats et dominer votre marché.
-            </p>
-            <a href="#contact" class="cta-primary">Démarrer mon projet</a>
+        <div class="container hero-content">
+            <h1>Votre présence en ligne ne devrait jamais être une faiblesse</h1>
+            <p class="hero-subtitle">Nous créons des sites web performants qui génèrent des résultats concrets pour votre entreprise locale.</p>
+            <div class="hero-cta">
+                <a href="contact.html" class="btn btn-primary">Démarrer un projet</a>
+                <a href="tarifs.html" class="btn btn-secondary">Voir les tarifs</a>
+            </div>
+        </div>
+    </section>
 
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-number">150+</span>
-                    <span class="stat-label">Projets livrés</span>
+    <section class="value-proposition">
+        <div class="container">
+            <h2>Ce que vous obtenez avec ALTERA</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">⚡</div>
+                    <h3>Site déployé en 7 jours</h3>
+                    <p>Processus structuré et rapide. Vous êtes en ligne rapidement, sans complications techniques.</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Clients satisfaits</span>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <h3>Conçu pour convertir</h3>
+                    <p>Chaque élément est pensé pour transformer vos visiteurs en clients. Design et stratégie alignés.</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">5 ans</span>
-                    <span class="stat-label">D'expertise</span>
+                <div class="value-item">
+                    <div class="value-icon">📱</div>
+                    <h3>Mobile-first</h3>
+                    <p>Plus de 60% de vos clients naviguent sur mobile. Votre site sera parfait sur tous les écrans.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔍</div>
+                    <h3>Visible sur Google</h3>
+                    <p>Optimisation SEO locale incluse. Vos clients vous trouvent quand ils cherchent vos services.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <section class="why-altera">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Notre Différence</span>
-                <h2 class="section-title">Nous créons des expériences digitales inoubliables</h2>
-                <p class="section-description">
-                    Chez APEX, nous ne faisons pas de sites web ordinaires. Nous créons des machines à convertir, 
-                    des vitrines qui marquent les esprits et des plateformes qui génèrent des résultats mesurables.
-                </p>
-                <p class="section-description">
-                    Chaque pixel est pensé pour votre succès. Chaque ligne de code est optimisée pour la performance. 
-                    Aucun template préfabriqué, aucun compromis sur la qualité.
-                </p>
-                <div class="value-statement">
-                    Premium par design. Redoutable par nature.
+            <h2>Pourquoi choisir ALTERA</h2>
+            <div class="why-content">
+                <div class="why-column">
+                    <h3>Expertise locale</h3>
+                    <p>Nous comprenons les enjeux des entreprises du Grand Est. Votre marché, vos clients, vos défis.</p>
+                </div>
+                <div class="why-column">
+                    <h3>Tarification transparente</h3>
+                    <p>Pas de surprise. Un prix fixe, un périmètre défini, un délai respecté.</p>
+                </div>
+                <div class="why-column">
+                    <h3>Support continu</h3>
+                    <p>Nous ne disparaissons pas après la livraison. Maintenance et évolution assurées.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="comparison">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Nos Offres Premium</span>
-                <h2 class="section-title">Des solutions sur-mesure conçues pour dominer votre marché</h2>
-                <p class="section-description">
-                    Deux offres d'exception, pensées pour transformer votre présence en ligne en véritable avantage concurrentiel.
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <article class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Site Vitrine Premium</h3>
-                    <p>
-                        Design unique et moderne qui capture l'attention et convertit vos visiteurs en clients. 
-                        Optimisé SEO, ultra-rapide et 100% responsive pour une expérience parfaite sur tous les écrans.
-                    </p>
-                    <div class="service-price">À partir de 1 997€</div>
-                    <ul class="service-features">
-                        <li>Design 100% sur-mesure et exclusif</li>
-                        <li>5-7 pages stratégiquement optimisées</li>
-                        <li>Performance maximale (temps de chargement <1s)</li>
-                        <li>SEO avancé inclus pour un référencement optimal</li>
-                        <li>Responsive parfait sur tous les écrans</li>
-                        <li>Formulaires de contact intelligents</li>
-                        <li>Support prioritaire 30 jours</li>
-                    </ul>
-                </article>
-
-                <!-- Service 2 -->
-                <article class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>E-commerce Dominateur</h3>
-                    <p>
-                        Boutique en ligne complète qui transforme les visiteurs en acheteurs récurrents. 
-                        Gestion produits intuitive, paiement ultra-sécurisé et analytics avancés pour maximiser vos ventes.
-                    </p>
-                    <div class="service-price">À partir de 3 997€</div>
-                    <ul class="service-features">
-                        <li>Plateforme e-commerce complète et évolutive</li>
-                        <li>Design luxe et moderne qui inspire confiance</li>
-                        <li>Gestion produits illimitée et simplifiée</li>
-                        <li>Paiement sécurisé intégré (Stripe, PayPal)</li>
-                        <li>Tableau de bord avancé avec statistiques en temps réel</li>
-                        <li>Optimisation conversion (A/B testing inclus)</li>
-                        <li>Support prioritaire 90 jours + formation</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Section -->
-    <section id="comparison" class="comparison">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Premium vs Amateur</span>
-                <h2 class="section-title">La différence entre exister en ligne et dominer votre marché</h2>
-                <p class="section-description">
-                    Ne compromettez pas votre image avec des solutions bas de gamme. 
-                    Découvrez ce qui fait la supériorité d'une agence premium.
-                </p>
-            </div>
-
+            <h2>Vitrine ou E-commerce : lequel choisir ?</h2>
             <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Critère</th>
-                            <th>Agence Premium</th>
-                            <th>Solutions Low-Cost</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Design unique et sur-mesure</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Code optimisé et propre</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Performance ultra-rapide</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>SEO professionnel inclus</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Support dédié et réactif</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Stratégie de conversion</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Maintenance et mises à jour</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Résultats mesurables</td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="comparison-row comparison-header">
+                    <div class="comparison-cell"></div>
+                    <div class="comparison-cell">Site vitrine</div>
+                    <div class="comparison-cell">Site e-commerce</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Objectif principal</div>
+                    <div class="comparison-cell">Présenter votre activité et générer des contacts</div>
+                    <div class="comparison-cell">Vendre directement en ligne</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Idéal pour</div>
+                    <div class="comparison-cell">Artisans, consultants, services locaux</div>
+                    <div class="comparison-cell">Boutiques, produits physiques ou numériques</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Mise en ligne</div>
+                    <div class="comparison-cell">7 jours</div>
+                    <div class="comparison-cell">10 jours</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Prix</div>
+                    <div class="comparison-cell">497 €</div>
+                    <div class="comparison-cell">747 €</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Paiement en ligne</div>
+                    <div class="comparison-cell">Non inclus</div>
+                    <div class="comparison-cell">Inclus</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="cta-content">
-            <h2>Prêt à dominer votre marché ?</h2>
-            <p>
-                Discutons de votre projet et créons ensemble quelque chose d'extraordinaire. 
-                Votre succès commence par une conversation.
-            </p>
-            <a href="mailto:contact@apex-digital.com" class="cta-button">Demander un devis gratuit</a>
+    <section class="offers-preview">
+        <div class="container">
+            <h2>Nos offres</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <h3>Site vitrine</h3>
+                    <div class="price">497 €</div>
+                    <p>La solution pour établir votre présence en ligne et attirer des clients locaux.</p>
+                    <a href="vitrine.html" class="btn btn-secondary">En savoir plus</a>
+                </div>
+                <div class="offer-card offer-featured">
+                    <h3>Site e-commerce</h3>
+                    <div class="price">747 €</div>
+                    <p>Vendez vos produits 24/7 avec une boutique en ligne professionnelle et sécurisée.</p>
+                    <a href="ecommerce.html" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="offer-card">
+                    <h3>Maintenance & SEO</h3>
+                    <div class="price">À partir de 39 €/mois</div>
+                    <p>Gardez votre site performant, sécurisé et visible sur Google.</p>
+                    <a href="maintenance-seo.html" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">APEX Digital</div>
-        <p>&copy; 2024 APEX Digital - Agence Web Premium. Tous droits réservés.</p>
-        <p style="margin-top: 1rem;">
-            <strong>Email:</strong> <em>contact@apex-digital.com</em>
-        </p>
+    <section class="testimonials">
+        <div class="container">
+            <h2>Ils nous font confiance</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Nous avons doublé nos demandes de devis en 3 mois grâce à notre nouveau site. L'équipe ALTERA a parfaitement compris nos besoins."</p>
+                    <div class="testimonial-author">Marc D., Électricien à Strasbourg</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Un processus simple et rapide. En une semaine, notre boutique était en ligne. Les ventes suivent depuis."</p>
+                    <div class="testimonial-author">Sophie L., Créatrice de bijoux à Reims</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Professionnel, réactif, à l'écoute. Notre site reflète exactement l'image qu'on voulait donner."</p>
+                    <div class="testimonial-author">Thomas R., Architecte d'intérieur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Prêt à transformer votre présence en ligne ?</h2>
+            <p>Discutons de votre projet. Sans engagement, sans jargon technique.</p>
+            <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>ALTERA</h4>
+                    <p>Création de sites web premium pour entreprises locales dans le Grand Est.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="vitrine.html">Site vitrine</a></li>
+                        <li><a href="ecommerce.html">Site e-commerce</a></li>
+                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Zone d'intervention</h4>
+                    <p>Strasbourg<br>Reims<br>Grand Est</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ALTERA. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="js/particles.js"></script>
 </body>
 </html>
