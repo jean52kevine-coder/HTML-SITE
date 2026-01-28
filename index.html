@@ -1,229 +1,970 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALTERA - Création de sites web premium pour entreprises locales | Strasbourg, Reims, Grand Est</title>
-    <meta name="description" content="ALTERA crée des sites web performants pour artisans, PME et entrepreneurs. Solutions vitrine et e-commerce clé en main. Strasbourg, Reims, Grand Est.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="ALTERA - Agence digitale premium. Sites web futuristes, branding puissant, résultats concrets. En avance sur son temps.">
+    <meta name="keywords" content="agence digitale, site web premium, branding, SEO, agence web">
+    <title>ALTERA — Agence Digitale Premium</title>
+    <style>
+        /* ============================================
+           VARIABLES & RESET
+        ============================================ */
+        :root {
+            --noir: #0b0b0f;
+            --blanc: #ffffff;
+            --violet: #8b5cf6;
+            --bleu-neon: #00d4ff;
+            --gris: #9ca3af;
+            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--noir);
+            color: var(--blanc);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ============================================
+           BACKGROUND ANIMÉ
+        ============================================ */
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 11, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(11, 11, 15, 0.95);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--violet), var(--bleu-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            filter: brightness(1.2);
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--blanc);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--violet), var(--bleu-neon));
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--bleu-neon);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: var(--violet);
+        }
+
+        /* Menu mobile */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--blanc);
+            transition: var(--transition);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--violet);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--blanc) 0%, var(--violet) 50%, var(--bleu-neon) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--gris);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--violet), var(--bleu-neon));
+            color: var(--blanc);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--blanc);
+            border: 2px solid var(--violet);
+        }
+
+        .btn-secondary:hover {
+            background: var(--violet);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        /* ============================================
+           SECTIONS GÉNÉRALES
+        ============================================ */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 8rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--violet);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--gris);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           CE QUE NOUS FAISONS
+        ============================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--violet), var(--bleu-neon));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            background: rgba(139, 92, 246, 0.05);
+            border-color: var(--violet);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(139, 92, 246, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--violet), var(--bleu-neon));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--gris);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           POURQUOI ALTERA
+        ============================================ */
+        .why-section {
+            background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.05), transparent);
+        }
+
+        .why-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .why-text h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .why-text p {
+            color: var(--gris);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .why-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .why-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            color: var(--gris);
+        }
+
+        .why-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--violet);
+            font-weight: 900;
+            font-size: 1.3rem;
+        }
+
+        .why-visual {
+            position: relative;
+            height: 500px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .why-visual::before {
+            content: 'ALTERA';
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--violet), var(--bleu-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+        }
+
+        /* ============================================
+           APPROCHE
+        ============================================ */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .approach-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .approach-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--violet), var(--bleu-neon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .approach-number::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--violet);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .approach-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .approach-step p {
+            color: var(--gris);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           CTA FINAL
+        ============================================ */
+        .cta-final {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 212, 255, 0.1));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 5rem 3rem;
+            text-align: center;
+            margin: 5rem auto;
+            max-width: 1000px;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-final p {
+            font-size: 1.3rem;
+            color: var(--gris);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+            position: relative;
+            z-index: 1;
+            background: rgba(11, 11, 15, 0.8);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--violet), var(--bleu-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--gris);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-copyright {
+            color: var(--gris);
+            font-size: 0.85rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 968px) {
+            .header-container {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(11, 11, 15, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 5rem 2rem;
+                transition: var(--transition);
+                border-left: 1px solid rgba(139, 92, 246, 0.3);
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            nav a {
+                font-size: 1.3rem;
+            }
+
+            .why-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .why-visual {
+                height: 300px;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .cta-final {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <canvas id="particles-canvas"></canvas>
+    <!-- Canvas pour le background animé -->
+    <canvas id="background-canvas"></canvas>
 
-    <header class="header">
-        <nav class="nav-container">
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-container">
             <div class="logo">ALTERA</div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="services.html">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="vitrine.html">Site vitrine</a></li>
-                        <li><a href="ecommerce.html">Site e-commerce</a></li>
-                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
-                    </ul>
-                </li>
-                <li><a href="tarifs.html">Tarifs</a></li>
-                <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
-                <li><a href="contact.html" class="cta-nav">Nous contacter</a></li>
-            </ul>
-            <div class="burger">
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="agence.html">Agence</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle" id="mobile-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </nav>
+        </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container hero-content">
-            <h1>Votre présence en ligne ne devrait jamais être une faiblesse</h1>
-            <p class="hero-subtitle">Nous créons des sites web performants qui génèrent des résultats concrets pour votre entreprise locale.</p>
-            <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary">Démarrer un projet</a>
-                <a href="tarifs.html" class="btn btn-secondary">Voir les tarifs</a>
+        <div class="hero-content">
+            <div class="hero-badge">Agence Digitale Premium</div>
+            <h1>L'agence digitale en avance sur son temps</h1>
+            <p>Sites premium. Image puissante. Résultats concrets. Nous créons des expériences digitales qui dominent votre marché.</p>
+            <div class="cta-group">
+                <a href="services.html" class="btn btn-primary">Voir nos services</a>
+                <a href="contact.html" class="btn btn-secondary">Demander un devis</a>
             </div>
         </div>
     </section>
 
-    <section class="value-proposition">
+    <!-- CE QUE NOUS FAISONS -->
+    <section>
         <div class="container">
-            <h2>Ce que vous obtenez avec ALTERA</h2>
-            <div class="value-grid">
-                <div class="value-item">
-                    <div class="value-icon">⚡</div>
-                    <h3>Site déployé en 7 jours</h3>
-                    <p>Processus structuré et rapide. Vous êtes en ligne rapidement, sans complications techniques.</p>
+            <div class="section-header">
+                <div class="section-label">Excellence</div>
+                <h2 class="section-title">Ce que nous faisons</h2>
+                <p class="section-description">Nous transformons votre vision en réalité digitale avec une approche premium et des résultats mesurables.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Sites Premium</h3>
+                    <p>Design futuriste, performance maximale et expérience utilisateur inoubliable. Votre site devient votre meilleur commercial.</p>
                 </div>
-                <div class="value-item">
-                    <div class="value-icon">🎯</div>
-                    <h3>Conçu pour convertir</h3>
-                    <p>Chaque élément est pensé pour transformer vos visiteurs en clients. Design et stratégie alignés.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Branding Puissant</h3>
+                    <p>Identité visuelle distinctive qui vous positionne comme leader. Votre marque inspire confiance et autorité.</p>
                 </div>
-                <div class="value-item">
-                    <div class="value-icon">📱</div>
-                    <h3>Mobile-first</h3>
-                    <p>Plus de 60% de vos clients naviguent sur mobile. Votre site sera parfait sur tous les écrans.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">🔍</div>
-                    <h3>Visible sur Google</h3>
-                    <p>Optimisation SEO locale incluse. Vos clients vous trouvent quand ils cherchent vos services.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Stratégie Digitale</h3>
+                    <p>Présence en ligne dominante. SEO, performance, conversions. Nous ne faisons pas dans la demi-mesure.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="why-altera">
+    <!-- POURQUOI ALTERA -->
+    <section class="why-section">
         <div class="container">
-            <h2>Pourquoi choisir ALTERA</h2>
             <div class="why-content">
-                <div class="why-column">
-                    <h3>Expertise locale</h3>
-                    <p>Nous comprenons les enjeux des entreprises du Grand Est. Votre marché, vos clients, vos défis.</p>
-                </div>
-                <div class="why-column">
-                    <h3>Tarification transparente</h3>
-                    <p>Pas de surprise. Un prix fixe, un périmètre défini, un délai respecté.</p>
-                </div>
-                <div class="why-column">
-                    <h3>Support continu</h3>
-                    <p>Nous ne disparaissons pas après la livraison. Maintenance et évolution assurées.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="comparison">
-        <div class="container">
-            <h2>Vitrine ou E-commerce : lequel choisir ?</h2>
-            <div class="comparison-table">
-                <div class="comparison-row comparison-header">
-                    <div class="comparison-cell"></div>
-                    <div class="comparison-cell">Site vitrine</div>
-                    <div class="comparison-cell">Site e-commerce</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Objectif principal</div>
-                    <div class="comparison-cell">Présenter votre activité et générer des contacts</div>
-                    <div class="comparison-cell">Vendre directement en ligne</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Idéal pour</div>
-                    <div class="comparison-cell">Artisans, consultants, services locaux</div>
-                    <div class="comparison-cell">Boutiques, produits physiques ou numériques</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Mise en ligne</div>
-                    <div class="comparison-cell">7 jours</div>
-                    <div class="comparison-cell">10 jours</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Prix</div>
-                    <div class="comparison-cell">497 €</div>
-                    <div class="comparison-cell">747 €</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Paiement en ligne</div>
-                    <div class="comparison-cell">Non inclus</div>
-                    <div class="comparison-cell">Inclus</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="offers-preview">
-        <div class="container">
-            <h2>Nos offres</h2>
-            <div class="offers-grid">
-                <div class="offer-card">
-                    <h3>Site vitrine</h3>
-                    <div class="price">497 €</div>
-                    <p>La solution pour établir votre présence en ligne et attirer des clients locaux.</p>
-                    <a href="vitrine.html" class="btn btn-secondary">En savoir plus</a>
-                </div>
-                <div class="offer-card offer-featured">
-                    <h3>Site e-commerce</h3>
-                    <div class="price">747 €</div>
-                    <p>Vendez vos produits 24/7 avec une boutique en ligne professionnelle et sécurisée.</p>
-                    <a href="ecommerce.html" class="btn btn-primary">En savoir plus</a>
-                </div>
-                <div class="offer-card">
-                    <h3>Maintenance & SEO</h3>
-                    <div class="price">À partir de 39 €/mois</div>
-                    <p>Gardez votre site performant, sécurisé et visible sur Google.</p>
-                    <a href="maintenance-seo.html" class="btn btn-secondary">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2>Ils nous font confiance</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p>"Nous avons doublé nos demandes de devis en 3 mois grâce à notre nouveau site. L'équipe ALTERA a parfaitement compris nos besoins."</p>
-                    <div class="testimonial-author">Marc D., Électricien à Strasbourg</div>
-                </div>
-                <div class="testimonial">
-                    <p>"Un processus simple et rapide. En une semaine, notre boutique était en ligne. Les ventes suivent depuis."</p>
-                    <div class="testimonial-author">Sophie L., Créatrice de bijoux à Reims</div>
-                </div>
-                <div class="testimonial">
-                    <p>"Professionnel, réactif, à l'écoute. Notre site reflète exactement l'image qu'on voulait donner."</p>
-                    <div class="testimonial-author">Thomas R., Architecte d'intérieur</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <h2>Prêt à transformer votre présence en ligne ?</h2>
-            <p>Discutons de votre projet. Sans engagement, sans jargon technique.</p>
-            <a href="contact.html" class="btn btn-primary">Nous contacter</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>ALTERA</h4>
-                    <p>Création de sites web premium pour entreprises locales dans le Grand Est.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="vitrine.html">Site vitrine</a></li>
-                        <li><a href="ecommerce.html">Site e-commerce</a></li>
-                        <li><a href="maintenance-seo.html">Maintenance & SEO</a></li>
+                <div class="why-text">
+                    <div class="section-label">Différence</div>
+                    <h2>Pourquoi ALTERA domine</h2>
+                    <p>Les agences classiques créent des sites. Nous créons des armes de domination digitale. Notre approche est simple : excellence ou rien.</p>
+                    <ul class="why-list">
+                        <li>Design futuriste qui écrase la concurrence</li>
+                        <li>Performance technique irréprochable</li>
+                        <li>Vision stratégique à long terme</li>
+                        <li>Résultats mesurables, pas de promesses vides</li>
+                        <li>Équipe d'élite, standards premium</li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Informations</h4>
-                    <ul>
-                        <li><a href="tarifs.html">Tarifs</a></li>
-                        <li><a href="pourquoi-un-site.html">Pourquoi un site</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                <div class="why-visual"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTRE APPROCHE -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Méthode</div>
+                <h2 class="section-title">Notre approche</h2>
+                <p class="section-description">Un processus éprouvé qui transforme votre ambition en domination digitale.</p>
+            </div>
+            <div class="approach-grid">
+                <div class="approach-step">
+                    <div class="approach-number">1</div>
+                    <h3>Vision</h3>
+                    <p>Nous analysons votre marché et définissons une stratégie de domination claire et sans compromis.</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Zone d'intervention</h4>
-                    <p>Strasbourg<br>Reims<br>Grand Est</p>
+                <div class="approach-step">
+                    <div class="approach-number">2</div>
+                    <h3>Création</h3>
+                    <p>Design et développement premium. Chaque pixel compte. Chaque interaction est pensée.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="approach-number">3</div>
+                    <h3>Domination</h3>
+                    <p>Lancement, optimisation et croissance. Votre présence digitale devient incontournable.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 ALTERA. Tous droits réservés.</p>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section>
+        <div class="container">
+            <div class="cta-final">
+                <h2>Prêt à dominer votre marché ?</h2>
+                <p>Rejoignez les entreprises qui ont choisi l'excellence. Votre transformation digitale commence maintenant.</p>
+                <a href="contact.html" class="btn btn-primary">Démarrer un projet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">ALTERA</div>
+            <div class="footer-tagline">Agence digitale premium</div>
+            <div class="footer-copyright">
+                © 2024 ALTERA. Tous droits réservés. Excellence digitale.
             </div>
         </div>
     </footer>
 
-    <script src="js/particles.js"></script>
+    <!-- JAVASCRIPT -->
+    <script>
+        // ============================================
+        // BACKGROUND ANIMÉ
+        // ============================================
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Particules (étoiles fixes)
+        const particles = [];
+        const particleCount = 150;
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2,
+                speedX: (Math.random() - 0.5) * 0.2,
+                speedY: (Math.random() - 0.5) * 0.2,
+                opacity: Math.random()
+            });
+        }
+
+        // Étoiles filantes
+        const shootingStars = [];
+
+        function createShootingStar() {
+            shootingStars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height * 0.5,
+                length: Math.random() * 80 + 40,
+                speed: Math.random() * 8 + 6,
+                opacity: 1
+            });
+        }
+
+        setInterval(createShootingStar, 3000);
+
+        // Animation
+        function animate() {
+            ctx.fillStyle = 'rgba(11, 11, 15, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Dessiner les particules
+            particles.forEach(particle => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(139, 92, 246, ${particle.opacity})`;
+                ctx.fill();
+
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+
+                if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
+                if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
+
+                particle.opacity = 0.3 + Math.sin(Date.now() * 0.001 + particle.x) * 0.3;
+            });
+
+            // Dessiner les étoiles filantes
+            shootingStars.forEach((star, index) => {
+                ctx.beginPath();
+                ctx.moveTo(star.x, star.y);
+                ctx.lineTo(star.x + star.length, star.y + star.length);
+                ctx.strokeStyle = `rgba(0, 212, 255, ${star.opacity})`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                star.x += star.speed;
+                star.y += star.speed;
+                star.opacity -= 0.01;
+
+                if (star.opacity <= 0) {
+                    shootingStars.splice(index, 1);
+                }
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // ============================================
+        // HEADER SCROLL
+        // ============================================
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // MENU MOBILE
+        // ============================================
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const nav = document.getElementById('nav');
+
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // SMOOTH SCROLL
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // ANIMATION AU SCROLL
+        // ============================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .approach-step, .why-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
